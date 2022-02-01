@@ -25,10 +25,11 @@ Table of contents:
 ## Deploy your own Squizzy instance
 
 To get started with Squizzy, follow these instructions.
-
+https://omyshevstepan.sanity.studio/
 1. [Copy](https://github.com/sanity-io/squizzy/generate) this repository and clone it to your computer
 2. Install dependencies with `npm install` (or `yarn`) in the root and `/studio` folders.
 3. Install Now CLI and Sanity CLI: `npm install --global @sanity/cli now`
+4. Install `npm install node-sass` module
 
 ### Deploying the Sanity Studio and host display on \*.sanity.studio
 
@@ -39,12 +40,12 @@ To get started with Squizzy, follow these instructions.
 ### Deploying the web app and the serverless functions on Now
 
 1. First you need to add a secret token with write permissions to your Now account:
-   1. Find your project’s API settings on https://manage.sanity.io/{YOUR_PROJECTID}/settings/api (or run `sanity manage` inside `/studio`)
+   1. Find your project’s API settings on https://manage.sanity.io (or run `sanity manage` inside `/studio`)
    2. Under the Tokens sections, create a new token with write permissions
    3. Rename the `.env.template` file to `.env` in the root folder, it will be ignored by git.
    4. Copy-paste the token into the `.env` file for the `SQUIZZY_WRITE_TOKEN=` variable
    5. Make sure you have copied the token and run `now secrets add squizzy_write_token $(pbpaste)` to add it on Now.
-   6. Alternatively: `now secrets add squizzy_write_token <the-token>` (put a space before `now` to avoid the token going into your bash history).
+   6. Alternatively: `now secrets add squizzy_write_token skvS2aEms8azHtlkpeRl5bw8A9gD17JbCpsQdbIZVTmDEPn7TT1cuUhUVIBOcFgTsfRZnJ2FpK4teEwCa7j0gSoT2h4rpUjq1AEECByRENUfuqbrAneg6yL3hbIrK1Hnthg22XZjnPbsdo9lxcl61lpECPq9GxKtL6RmX8ah1ap6LZYiflsr` (put a space before `now` to avoid the token going into your bash history).
 2. Replace the `projectId` and `dataset` in `./sanityClientConfig.js` with the one you connected the Studio to. Find them by looking in `/studio/sanity.json` or by running `sanity debug` in the `/studio` folder.
 3. Run `now` in the root folder to deploy the app, or go to [your Now account and add the GitHub repository][now-github]
 4. Add your app domain to your Sanity project’s CORS settings. In the `/studio` folder, run `sanity cors add https://your-name.now.sh --no-credentials` or go to your project’s API settings on [manage.sanity.io](https://manage.sanity.io)
@@ -104,6 +105,7 @@ Go to [vuejs.org/docs](https://vuejs.org/docs) for documentation on Vue.
 N.B! The web app will run on `localhost:3000` (the dev server log will show a different port number, but `now dev` binds this random port to :3000).
 
 ## Extras
+squizzy-peach-eta.vercel.app
 
 - Add the [Giphy][giphy] asset source selector if you want easy access to animated GIFs for your quizzes.
 
